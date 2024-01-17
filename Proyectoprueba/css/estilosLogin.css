@@ -1,0 +1,53 @@
+body{
+    background: #404040;
+    background: linear-gradient(to left, #8c8c8c, #404040);
+}
+
+.texto{
+    font-family: 'Amatic SC';
+    padding-right: 250px;
+}
+
+.texto h1{
+    padding-bottom: 50px;
+    color: #000000;
+    font-size: 50px;
+}
+
+h1::after{
+    content: '';
+    position: absolute;
+    width: 610px;
+    height: 3px;
+    background-color: currentColor;
+    transform: rotate(90deg);
+    border-radius: 50%;
+    top: 20rem;
+    left: -19rem;
+
+}
+
+.container {
+    margin-top: 8rem;
+}
+.boton{
+    border: white;
+    font-size: 22px;
+    color: white;
+    background-color: #404040;
+    height: 50px;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.boton:hover{
+    background: #8c8c8c;
+}
+
+a{
+    color: #404040;
+}
+
+a:hover{
+    color:#8c8c8c;
+}

@@ -1,0 +1,36 @@
+body{
+    background: #404040;
+    background: linear-gradient(to left, #8c8c8c, #404040);
+}
+
+.texto h1{
+    padding-bottom: 50px;
+    color: #000000;
+    font-size: 50px;
+}
+
+.container {
+    margin-top: 8rem;
+    width: 700px;
+}
+.boton{
+    border: white;
+    font-size: 22px;
+    color: white;
+    background-color: #404040;
+    height: 50px;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.boton:hover{
+    background: #8c8c8c;
+}
+
+a{
+    color: #404040;
+}
+
+a:hover{
+    color:#8c8c8c;
+}
