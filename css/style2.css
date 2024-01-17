@@ -1,0 +1,76 @@
+*{
+    font-family: 'Inter', sans-serif;
+}
+body{
+    background: #404040;
+    background: linear-gradient(to left, #8c8c8c, #404040);
+}
+.container{
+    background: white;
+    width: 450px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    border-radius: 3%;
+    box-shadow: 1px 1px 30px #313131;
+}
+
+h1{
+    padding-top: 55px;
+    text-align: center;
+    color: #000000;
+    letter-spacing: 3px;
+}
+
+.login{
+    padding-top: 40px;
+    padding-left: 50px;
+}
+
+.register{
+    padding-top: 30px;
+}
+
+.inputs{
+    
+    padding-left: 20px;
+    background: #e4e4e4;
+    border: 0px white;
+    height: 50px;
+    width: 21rem;
+    
+}
+
+::placeholder{
+    color: #868686;
+    font-weight: 10px;
+}
+
+button{
+    background: #000000;
+    border: none;
+    font-size: 20px;
+    color: white;
+    height: 50px;
+    width: 21rem;
+    letter-spacing: 3px;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+button:hover{
+    box-shadow: 0 0 11px rgba(0, 0, 0, .7);
+}
+
+.success{
+    color: #2ed573;
+}
+.error{
+    color: #ff4757;
+    text-align: center;
+    padding-top: 10px;
+}

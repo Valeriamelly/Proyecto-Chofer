@@ -1,0 +1,118 @@
+
+<?php include('partials/menu.php'); ?>
+
+    <?php 
+        //CHeck whether id is passed or not
+        if(isset($_GET['varChofer']))
+        {
+            //Category id is set and get the id
+            $varChofer = $_GET['varChofer'];
+            // Get the CAtegory Title Based on Category ID
+            $sql = "SELECT id FROM tbl_choferes WHERE nombre_chofer=$varChofer";
+
+            //Execute the Query
+            $res = mysqli_query($conn, $sql);
+
+            //Get the value from Database
+            $row = mysqli_fetch_assoc($res);
+            //Get the TItle
+            $varChoferid = $row['id'];
+        }
+        else
+        {
+            //CAtegory not passed
+            //Redirect to Home page
+            header('location:'.SITEURL.'chofer/');
+        }
+    ?>
+
+<!-- Main Content Section Starts -->
+<div class="main-content">
+    <div class="wrapper">
+        <h1>Dashboard</h1>
+        <br><br>
+        <?php 
+            if(isset($_SESSION['login']))
+            {
+                echo $_SESSION['login'];
+                unset($_SESSION['login']);
+            }
+        ?>
+        <br><br>
+
+         <!--<div class="col-4 text-center">
+
+            <?php 
+                //Sql Query 
+                $sql = "SELECT * FROM tbl_category";
+                //Execute Query
+                $res = mysqli_query($conn, $sql);
+                //Count Rows
+                $count = mysqli_num_rows($res);
+            ?>
+
+            <h1><?php echo $count; ?></h1>
+            <br />
+            Categorias
+        </div>-->
+
+         <!--<div class="col-4 text-center">
+
+            <?php 
+                //Sql Query 
+                $sql2 = "SELECT * FROM tbl_choferes";
+                //Execute Query
+                $res2 = mysqli_query($conn, $sql2);
+                //Count Rows
+                $count2 = mysqli_num_rows($res2);
+            ?>
+
+            <h1><?php echo $count2; ?></h1>
+            <br />
+            Choferes
+        </div>-->
+
+        <div class="col-4 text-center">
+            
+            <?php 
+                //Sql Query 
+                $sql3 = "SELECT * FROM tbl_order";
+                //Execute Query
+                $res3 = mysqli_query($conn, $sql3);
+                //Count Rows
+                $count3 = mysqli_num_rows($res3);
+            ?>
+
+            <h1><?php echo $count3; ?></h1>
+            <br />
+            Total Orders
+        </div>
+
+        <div class="col-4 text-center">
+            
+            <?php 
+                //Creat SQL Query to Get Total Revenue Generated
+                //Aggregate Function in SQL
+                $sql4 = "SELECT SUM(price) AS Total FROM tbl_order WHERE status='Finalizado'";
+
+                //Execute the Query
+                $res4 = mysqli_query($conn, $sql4);
+
+                //Get the VAlue
+                $row4 = mysqli_fetch_assoc($res4);
+                
+                //GEt the Total REvenue
+                $total_revenue = $row4['Total']*0.3;
+
+            ?>
+
+            <h1>$<?php echo $total_revenue; ?></h1>
+            <br />
+            Ganancia Neta de la Página
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+</div>
+<!-- Main Content Setion Ends -->
